@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="2018-04-25-welcome-to-jekyll.markdown" />
+    <None Include="..\about.md" />
+    <None Include="..\_config.yml" />
+    <None Include="2018-04-27-homepage.htm" />
+    <None Include="2018-04-27-github.htm" />
   </ItemGroup>
 </Project>
