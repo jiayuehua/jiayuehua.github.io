@@ -1,0 +1,62 @@
+---
+layout: post
+status: publish
+published: true
+title: 星河璀璨2 输出1-4的全排列
+author:
+  display_name: jiayuehua
+  login: jiayuehua
+  email: jiayuehua1982@qq.com
+  url: ''
+author_login: jiayuehua
+author_email: jiayuehua1982@qq.com
+wordpress_id: 83
+wordpress_url: https://www.jiayuehua.com/?p=83
+date: '2016-01-30 12:41:09 +0800'
+date_gmt: '2016-01-30 12:41:09 +0800'
+categories:
+- 编程
+tags: []
+comments: []
+---
+<pre class="brush:cpp;toolbar:false;">#include <iostream>
+#include <vector>
+#include <iterator>
+ 
+std::vector<std::string> foo(std::string s)
+{
+  std::vector<std::string> res;
+  if (s.size() == 0)
+  {
+    return res;
+  }
+  else if (s.size() == 1)
+  {
+    res.push_back(s);
+    return res;
+  }
+  else
+  {
+    std::vector<std::string> res2 = foo(std::string(s.begin() + 1, s.end()));
+    for (std::vector<std::string>::iterator i = res2.begin(); i != res2.end(); ++i)
+    {
+      int sz = i->size();
+      for (int j = 0; j <= sz; ++j)
+      {
+        std::string tmp = *i;
+        tmp.insert(tmp.begin() + j, s[0]);
+        res.push_back(tmp);
+      }
+    }
+    return res;
+  }
+}
+ 
+int main(int argc, char *argv[])
+{
+  std::vector <std::string> v = foo(&ldquo;1234&rdquo;);
+  std::ostream_iterator<std::string> oit(std::cout, &ldquo;\n&rdquo;);
+  std::copy(v.begin(), v.end(), oit);
+  return 0;
+}</pre>
+<p></p>

@@ -1,0 +1,69 @@
+---
+layout: post
+status: publish
+published: true
+title: Std::call_once 多线程库中只被调用一次函数实现方法
+author:
+  display_name: jiayuehua
+  login: jiayuehua
+  email: jiayuehua1982@qq.com
+  url: ''
+author_login: jiayuehua
+author_email: jiayuehua1982@qq.com
+wordpress_id: 212
+wordpress_url: https://www.jiayuehua.com/?p=212
+date: '2016-12-26 05:09:19 +0800'
+date_gmt: '2016-12-26 05:09:19 +0800'
+categories:
+- 编程
+tags: []
+comments: []
+---
+<pre class="brush:cpp;toolbar:false;">
+保证f只被调用一次 
+fox 库可由github.com/jiayuehua/fox中查看 
+
+
+  #include <iostream>
+#include <utility>
+#include <fox/thread.hpp>
+#include <mutex>
+struct OnceFlag {
+  std::mutex m_;
+  bool hascalled_ = false;
+};
+ template< class Callable, class... Args >
+void callOnce(OnceFlag&amp; flag, Callable&amp;&amp; f, Args&amp;&amp;... args)
+ 
+{
+  std::scoped_lock l(flag.m_);
+  if (!flag.hascalled_)
+  {
+    flag.hascalled_ = true;
+    std::forward<Callable>(f)(std::forward<Args>(args)...);
+  }
+}
+//例子 
+OnceFlag onceflag;
+void OnlyOnce()
+{
+  std::cout &amp;lt;&amp;lt; "OnlyOnce!\n";
+}
+  
+void ThreadFoo()
+{
+  callOnce(onceflag, OnlyOnce);
+}
+  
+int main()
+{
+  fox::Thread t(ThreadFoo);
+  fox::Thread t1(ThreadFoo);
+  fox::Thread t2(ThreadFoo);
+  fox::Thread t3(ThreadFoo);
+}
+
+输出 OnlyOnce!
+
+</pre>
+<p></p>

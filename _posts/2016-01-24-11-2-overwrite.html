@@ -1,0 +1,93 @@
+---
+layout: post
+status: publish
+published: true
+title: 翱翔天空 11.2 overwrite
+author:
+  display_name: jiayuehua
+  login: jiayuehua
+  email: jiayuehua1982@qq.com
+  url: ''
+author_login: jiayuehua
+author_email: jiayuehua1982@qq.com
+wordpress_id: 47
+wordpress_url: http://www.jiayuehua.com/?p=47
+date: '2016-01-24 03:47:52 +0800'
+date_gmt: '2016-01-24 03:47:52 +0800'
+categories:
+- 编程环境
+tags: []
+comments: []
+---
+<p><span style="font-size:12pt">在linux操作中，常常遇到这种情况，想要改写某文件，方法一般是将原来的操作标准输出重定向到一个文件，然后使用cp或mv覆盖原始文件。比如<br />
+</span></p>
+<p><span style="font-size:12pt">$ cat &ndash;n  source.cpp >source2.cpp; mv source2.cpp source.cpp<br />
+</span></p>
+<p><span style="font-size:12pt">有没有更好的方法呢？<br />
+</span></p>
+<p><span style="font-size:12pt">答案是overwrite， 是一个特别精巧的shell脚本。见经典名著<<unix 编程环境>>第112页，这里给出源码，也可以从<a href="https://github.com/jiayuehua/hoc">https://github.com/jiayuehua/hoc</a>/ 中下载misc/overwrite3 强烈建议每个接触类unix的朋友都有一本该书。<br />
+</span></p>
+<p><span style="font-size:12pt">使用方法 ：<br />
+</span></p>
+<p><span style="font-size:12pt">$ overwrite dstfile command<br />
+</span></p>
+<p><span style="font-size:12pt">如<br />
+</span></p>
+<p><span style="font-size:12pt">$ overwrite source.cpp cat -n source.cpp<br />
+</span></p>
+<p><span style="font-size:12pt">$ overwrite source.cpp cat -n source.cpp |head<br />
+</span></p>
+<p><span style="font-size:12pt">源码：<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt"># overwrite:  copy standard input to output after EOF<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt"># final version<br />
+</span></p>
+<p>
+&nbsp;</p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">opath=$PATH<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">PATH=/bin:/usr/bin<br />
+</span></p>
+<p>
+&nbsp;</p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">case $# in<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">0|1)&nbsp;&nbsp;&nbsp;&nbsp;echo 'Usage: overwrite file cmd [args]' 1>&amp;2; exit 2<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">esac<br />
+</span></p>
+<p>
+&nbsp;</p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">file=$1; shift<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">new=/tmp/overwr1.$$; old=/tmp/overwr2.$$<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">trap 'rm -f $new $old; exit 1' 1 2 15&nbsp;&nbsp;&nbsp;&nbsp;# clean up files<br />
+</span></p>
+<p>
+&nbsp;</p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">if PATH=$opath "$@" >$new&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# collect input<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">then<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;cp $file $old&nbsp;&nbsp;&nbsp;&nbsp;# save original file<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;trap '' 1 2 15&nbsp;&nbsp;&nbsp;&nbsp;# we are committed; ignore signals<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;cp $new $file<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">else<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;echo "overwrite: $1 failed, $file unchanged" 1>&amp;2<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;exit 1<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">fi<br />
+</span></p>
+<p><span style="color:black; font-family:宋体; font-size:12pt">rm -f $new $old<br />
+</span></p>
+<p>
+&nbsp;</p>
+<p><span style="font-family:Staccato222 BT; font-size:12pt">jiayuehua<br />
+</span></p>

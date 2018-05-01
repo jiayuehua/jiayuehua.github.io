@@ -1,0 +1,50 @@
+---
+layout: post
+status: publish
+published: true
+title: 使用variadic template实现函数重载
+author:
+  display_name: jiayuehua
+  login: jiayuehua
+  email: jiayuehua1982@qq.com
+  url: ''
+author_login: jiayuehua
+author_email: jiayuehua1982@qq.com
+wordpress_id: 233
+wordpress_url: http://www.jiayuehua.com/?p=233
+date: '2017-11-19 13:33:07 +0800'
+date_gmt: '2017-11-19 13:33:07 +0800'
+categories:
+- 编程
+tags:
+- 编程
+- C++
+comments: []
+---
+<pre class="brush:cpp;toolbar:false;">#include <sparsehash/dense_hash_map>
+#include <iostream>
+#include <string>
+#include <numeric>
+#include <limits>
+#include <type_traits>
+template <typename... Ts>
+struct overloaded : Ts...
+{
+  overloaded(Ts... arg):Ts(arg)... {};
+  using Ts::operator()...;
+};
+template <typename... Ts>
+auto make_overloaded(Ts... arg)->overloaded<Ts...>
+{
+  return overloaded<Ts...>(arg...);
+}
+int main()
+{
+  using namespace std;
+  make_overloaded(
+    [](int t){std::cout<<t <<std::endl;},
+    [](double d){std::cout<<d<<std::endl;}
+  )(100);
+ 
+}</pre>
+<p>maked_overloaded可以将多个函数对象整合为一个函数对象，可以构造visitor, 用于C++17中variant的std::visit函数。</p>

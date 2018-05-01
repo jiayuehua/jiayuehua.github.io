@@ -1,0 +1,83 @@
+---
+layout: post
+status: publish
+published: true
+title: 蛇形遍历二维矩阵
+author:
+  display_name: jiayuehua
+  login: jiayuehua
+  email: jiayuehua1982@qq.com
+  url: ''
+author_login: jiayuehua
+author_email: jiayuehua1982@qq.com
+wordpress_id: 255
+wordpress_url: http://www.jiayuehua.com/?p=255
+date: '2018-01-12 10:49:05 +0800'
+date_gmt: '2018-01-12 10:49:05 +0800'
+categories:
+- 编程
+tags: []
+comments: []
+---
+<pre>#include&nbsp;<iostream>
+void&nbsp;matrix()
+{
+&nbsp;&nbsp;constexpr&nbsp;int&nbsp;M=5,N=3;
+&nbsp;&nbsp;int&nbsp;a[M][N];
+&nbsp;&nbsp;int&nbsp;k&nbsp;=&nbsp;-1;
+&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;i<M;&nbsp;++i)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;j&nbsp;=&nbsp;0;&nbsp;j<N;++j)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][j]=++k;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;i<M;&nbsp;++i)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;j&nbsp;=&nbsp;0;&nbsp;j<N;++j)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout<<a[i][j]<<"&nbsp;";
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout<<"\n";
+&nbsp;&nbsp;}
+&nbsp;&nbsp;for&nbsp;(int&nbsp;l&nbsp;=&nbsp;0;&nbsp;l<M+N-1;&nbsp;++l)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(l&nbsp;%&nbsp;2&nbsp;==&nbsp;0)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;<=&nbsp;l;&nbsp;++i)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i&nbsp;>=&nbsp;0&nbsp;&amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;<&nbsp;M&nbsp;&amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(l&nbsp;-&nbsp;i)&nbsp;>=&nbsp;0&nbsp;&amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(l&nbsp;-&nbsp;i)&nbsp;<&nbsp;N
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout&nbsp;<<&nbsp;i&nbsp;<<&nbsp;","&nbsp;<<&nbsp;l&nbsp;-&nbsp;i&nbsp;<<&nbsp;":"&nbsp;<<&nbsp;a[i][l&nbsp;-&nbsp;i]&nbsp;<<&nbsp;std::endl;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;else
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;l;&nbsp;i&nbsp;>=&nbsp;0;&nbsp;--i)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i&nbsp;>=&nbsp;0&nbsp;&amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;<&nbsp;M&nbsp;&amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(l&nbsp;-&nbsp;i)&nbsp;>=&nbsp;0&nbsp;&amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(l&nbsp;-&nbsp;i)&nbsp;<&nbsp;N
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout&nbsp;<<&nbsp;i&nbsp;<<&nbsp;","&nbsp;<<&nbsp;l&nbsp;-&nbsp;i&nbsp;<<&nbsp;":"&nbsp;<<&nbsp;a[i][l&nbsp;-&nbsp;i]&nbsp;<<&nbsp;std::endl;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+}
+int&nbsp;main(int&nbsp;argc,&nbsp;char*&nbsp;argv[])
+{
+&nbsp;&nbsp;matrix();
+}
+</pre>
