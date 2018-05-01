@@ -82,8 +82,6 @@ permalink: /about/
 - 魏秋月
 - 张常宁
 
-```
-```
 贾跃华
 
 我的新浪博客 [贾跃华](http://http://blog.sina.com.cn/jiayuehua8)

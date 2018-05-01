@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: 贾跃华 
 email: yuehwa@qq.com
-description: >- # 大船必能远航。
+description: >- # Hello, World! 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jiayuehua
