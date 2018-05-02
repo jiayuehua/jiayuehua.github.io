@@ -1,25 +1,12 @@
 ---
 layout: post
-status: publish
-published: true
-title: 星河璀璨2 输出1-4的全排列
-author:
-  display_name: jiayuehua
-  login: jiayuehua
-  email: jiayuehua1982@qq.com
-  url: ''
-author_login: jiayuehua
-author_email: jiayuehua1982@qq.com
-wordpress_id: 83
-wordpress_url: https://www.jiayuehua.com/?p=83
-date: '2016-01-30 12:41:09 +0800'
-date_gmt: '2016-01-30 12:41:09 +0800'
-categories:
-- 编程
-tags: []
-comments: []
+title:  "permutaion"
+date:   2018-05-02 07:23:56 +0800
+categories: jekyll update
 ---
-<pre class="brush:cpp;toolbar:false;">#include <iostream>
+1 2 3 4 的全排列
+```
+#include <iostream>
 #include <vector>
 #include <iterator>
  
@@ -54,9 +41,9 @@ std::vector<std::string> foo(std::string s)
  
 int main(int argc, char *argv[])
 {
-  std::vector <std::string> v = foo(&ldquo;1234&rdquo;);
-  std::ostream_iterator<std::string> oit(std::cout, &ldquo;\n&rdquo;);
+  std::vector <std::string> v = foo(“1234”);
+  std::ostream_iterator<std::string> oit(std::cout, “\n”);
   std::copy(v.begin(), v.end(), oit);
   return 0;
-}</pre>
-<p></p>
+}
+```

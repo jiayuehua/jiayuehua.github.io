@@ -117,12 +117,20 @@
   <ItemGroup>
     <None Include="..\about.md" />
     <None Include="..\_config.yml" />
+    <None Include="2018-04-25-welcome-to-jekyll.markdown" />
     <None Include="2018-04-27-homepage.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="2018-04-27-github.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="2018-05-02-call-once.md" />
+    <None Include="2018-05-02-go.md" />
+    <None Include="2018-05-01-matrix-traversal.md" />
+    <None Include="2018-05-02-permutation.md" />
+    <None Include="2018-05-02-hanoi.markdown" />
+    <None Include="2018-05-02-Matrix-implement.md" />
+    <None Include="2018-05-02-variadic-template.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
