@@ -1,11 +1,10 @@
 ---
 layout: post
 title:  "shift"
-date:   2019-11-11 07:23:56 +0800
+date:   2019-10-11 07:23:56 +0800
 categories: jekyll update
 ---
 C++中的整型的移位操作可能导致undefined behavior。从美国女程序员Satabdi Das学到
-如
 ```
 #include <cstdint>
 #include <iostream>
@@ -21,5 +20,4 @@ int main()
   j = i<<k;//UB
 }
 ```
-
 如果k大于等于i的二进制bit位数(32)，或者k小于0，将导致undefined behavior。谢谢你 Satabdi Das!
