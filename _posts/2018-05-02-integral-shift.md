@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "integral"
-date:   2019-11-17 04:10:52 +0800
+title:  "shift"
+date:   2018-05-02 07:23:56 +0800
 categories: jekyll update
 ---
 C++中的整型的移位操作可能导致undefined behavior。从美国女程序员Satabdi Das学到
