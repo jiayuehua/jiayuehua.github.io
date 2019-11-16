@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "integral type could cause undefined behavior"
-date:   2019-11-01 07:23:52 +0800
+date:   2019-01-17 07:23:52 +0800
 categories: jekyll update
 ---
 C++中的整型的移位操作可能导致undefined behavior。从美国女程序员Satabdi Das学到
 如
+
 ```
 #include <cstdint>
 #include <iostream>
