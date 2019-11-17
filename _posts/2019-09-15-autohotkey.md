@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "编程友好读的键盘布局"
+title:  "编程友好的键盘布局"
 date:   2019-09-15 07:23:58 +0800
 categories: jekyll update
 ---
