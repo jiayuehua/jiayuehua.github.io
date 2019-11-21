@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "matrix traversal"
-date:   2018-05-01 07:23:52 +0800
+date:   2018-11-01 07:23:52 +0000
 categories: jekyll update
 ---
 蛇行遍历二维矩阵
