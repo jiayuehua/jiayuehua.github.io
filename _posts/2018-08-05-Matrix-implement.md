@@ -5,7 +5,7 @@ date:   2018-08-05 07:23:51 +0000
 categories: jekyll update
 ---
 C++程序设计语言 第四版 有一章专门介绍了matrix，但其中没有讲解do_slice的实现，该matrix库github链接 https://github.com/asutton/origin-google/blob/master/origin/math/matrix/matrix.impl/slice.hpp 我们谈谈它的do_slice实现
-```
+```cpp
 // Compute the extents and strides for the specified slice in the dim dimension.
 // Note that dim is an integral_constant specifying the dimension in which the
 // slice is computed.

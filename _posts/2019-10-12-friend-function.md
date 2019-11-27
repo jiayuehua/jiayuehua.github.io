@@ -5,7 +5,7 @@ date:   2019-10-12 07:23:58 +0800
 categories: jekyll update
 ---
 友元函数大家习惯将声明和定义分开写,如
-```
+```cpp
 #include <iostream>
 namespace Me
 {
@@ -21,7 +21,7 @@ std::ostream& operator<<(std::ostream& os, const Int& i)
 }  // namespace Me
 ```
 然而，将友元函数直接写在类的定义内是更好的写法
-```
+```cpp
 namespace He
 {
 struct Int {
@@ -35,7 +35,7 @@ struct Int {
 }  // namespace He
 ```
 这时友元函数仅能通过ADL查找到，如
-```
+```c++
 struct Bar {
 };
 void foo()

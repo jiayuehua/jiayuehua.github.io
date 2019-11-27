@@ -4,7 +4,7 @@ title:  "hanoi tower"
 date:   2018-07-02 07:23:10 +0000
 categories: jekyll update
 ---
-```
+```cpp
 #include <iostream>
 #include <cstdio>
 void hanoi(char a, char b, char c, int n)

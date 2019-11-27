@@ -5,7 +5,7 @@ date:   2018-05-01 07:23:58 +0000
 categories: jekyll update
 ---
 1 * 2 瓷砖覆盖8 * 8地板
-```
+```cpp
 #include <stdio.h>
 #include <string.h>
 enum {

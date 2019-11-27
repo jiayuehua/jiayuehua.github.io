@@ -5,7 +5,7 @@ date:   2018-11-01 07:23:52 +0000
 categories: jekyll update
 ---
 蛇行遍历二维矩阵
-```
+```cpp
 #include <iostream>
 void matrix()
 {

@@ -4,7 +4,7 @@ title:  "使用variadic template实现函数重载"
 date:   2018-12-20 07:23:52 +0000
 categories: jekyll update
 ---
-```
+```cpp
 #include <sparsehash/dense_hash_map>
 #include <iostream>
 #include <string>
