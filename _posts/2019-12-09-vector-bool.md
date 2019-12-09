@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "vector<bool>"
-date:   2019-12-09 07:23:58 +0000
+title:  "vector of bool"
+date:   2019-12-09 17:23:58 +0100
 categories: jekyll update
 ---
-vector\<bool\>  和vector\<int\>有啥区别？区别是vector<bool>的reference_type 不是bool&,而是代理类型。这种代理类型可以转换为bool，这种代理类型还有一个特点，拷贝构造时，相当于拷贝了bit的"地址",而当赋值时，则会真正的拷贝底层的bit。比如如下swap代码:
+vector\<bool\>  和vector\<int\>有啥区别？区别是vector\<bool>的reference_type 不是bool&,而是代理类型。这种代理类型可以转换为bool，这种代理类型还有一个特点，拷贝构造时，相当于拷贝了bit的"地址",而当赋值时，则会真正的拷贝底层的bit。比如如下swap代码:
 
 
 ```cpp
