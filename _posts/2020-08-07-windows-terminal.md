@@ -303,5 +303,5 @@ winget install Microsoft.WindowsTerminalPreview
     {}
   ]
 }
-```json
+```
 
