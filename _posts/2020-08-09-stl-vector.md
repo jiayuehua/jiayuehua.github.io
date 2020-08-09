@@ -10,6 +10,7 @@ vector只能push_back而不能push_front，原因是push_front时需要将现有
 
 |&nbsp;|&nbsp; | 1 | 2 | 3 |&nbsp;|&nbsp;|
 |:-:| :-: |:-:| :-: |:-:| :-: |:-:|
+|&nbsp;|&nbsp; | 1 | 2 | 3 |&nbsp;|&nbsp;|
 
 假定dvector中有三个元素{1,2,3},dvector会在开始有两个分配但未初始化的空位，这样push_front就是O(1)的操作。
 
