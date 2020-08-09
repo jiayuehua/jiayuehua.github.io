@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "stl vector的现代演进"
-date:   2019-11-12 07:23:58 +0800
+date:   2020-08-09 07:23:58 +0800
 categories: jekyll update
 ---
 vector是stl中最常用最重要的容器，那么vector有那些地方还可以做的更佳呢?
