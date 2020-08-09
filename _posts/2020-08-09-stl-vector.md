@@ -1,15 +1,15 @@
 ---
 layout: post
 title:  "stl vector的现代演进"
-date:   2020-08-09 07:23:58 +0800
+date:   2020-08-09 09:23:58 +0800
 categories: jekyll update
 ---
 vector是stl中最常用最重要的容器，那么vector有那些地方还可以做的更佳呢?
 ### 支持push_front,front成员函数
 vector只能push_back而不能push_front，原因是push_front时需要将现有所有元素向后拷贝，然后将插入的值拷贝到第一个元素，很耗时。2015年google summer of code的一个项目[dvector](https://github.com/erenon/double_ended)，试图解决这一问题，dvector支持push_front，方法是元素不再存储在自由存储数组的开始，而是存储在中间:
 
-|&nbsp;|&nbsp; | 1 | 2 | 3 |&nbsp;|&nbsp;
-:-:| :-: 
+&nbsp;|&nbsp; | 1 | 2 | 3 |&nbsp;|&nbsp;
+:-:| :-: |:-:| :-: |:-:| :-: |:-:
 
 假定dvector中有三个元素{1,2,3},dvector会在开始有两个分配但未初始化的空位，这样push_front就是O(1)的操作。
 
@@ -53,7 +53,7 @@ int main()
 而如果支持relocation，则可以合并第2、第3步，改为一步：直接调用memcopy。而memcopy的性能自不待言。使用relocation可显著提升性能，减少编译生成的指令数量。relocation正在由arthur dwyer提案以期成为标准，arthur在C++ Now上有做relocation的原理的详细精彩演讲：[“The Best Type Traits that C++ Doesn't Have”](https://youtu.be/MWBfmmg8-Yo)和[ “Trivially Relocatable”](https://youtu.be/SGdfPextuAU)。
 
 ### pmr vector
-pmr vector在C++17时引入，pmr vector使用pmr alloator，其分配器是多态分配器。使用strategy 设计模式，pmr allocator可以使用不同的memory_resource，jason turner在c\++ 中演示了pmr 容器能提升容器性能3.5倍以上。
+pmr vector在C++17时引入，pmr vector使用pmr alloator，其分配器是多态分配器。使用strategy 设计模式，pmr allocator可以使用不同的memory_resource，jason turner在c\++ weekly 中演示了pmr 容器能提升容器性能3.5倍以上。
 
 
 ### 支持递归
