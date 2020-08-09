@@ -10,8 +10,9 @@ vector只能push_back而不能push_front，原因是push_front时需要将现有
 
 |&nbsp;|&nbsp; | 1 | 2 | 3 |&nbsp;|&nbsp;|
 |:-:| :-: |:-:| :-: |:-:| :-: |:-:|
+|&nbsp;|0 | 1 | 2 | 3 |&nbsp;|&nbsp;|
 
-假定dvector中有三个元素{1,2,3},dvector会在开始有两个分配但未初始化的空位，这样push_front就是O(1)的操作。
+假定dvector中有三个元素{1,2,3},dvector会在开始有两个分配但未初始化的空位，这样push_front就是复杂度O(1)的操作，push_front(0)后数组中有四个初始化的元素{0,1,2,3}，表格第一二行分别表示了push_front(0)操作前和操作后元素在自由数组中的存储方式。
 
 ### 快速删除非尾端的元素
 
