@@ -114,9 +114,9 @@ int main()
 }
 
 ```
-以上我们自行实现了支持structure binding的类，要支持structure binding,需要特化tuple_element,tuple_size,和实现三个get函数，front的类型和tuple_element<0,splitter>相同，为char。另外需要注意的是front变量的地址和str.front()返回值的地址相同。这是因为structure binding时，编译器会为get函数的返回值创建一个左值变量front，其地址为get<0>返回值的地址；所以如果++front，str.front()将为'b'。请认真领会。
+以上我们自行实现了支持structure binding的类，要支持structure binding,需要特化tuple_element,tuple_size,和实现三个get函数。front的类型和tuple_element<0,splitter>::type相同，为char。另外需要注意的是front变量的地址和str.front()返回值的地址相同。这是因为structure binding时，编译器会为get函数的返回值创建一个左值变量front，其地址为get<0>返回值的地址；所以如果++front，str.front()将为'b'。请认真领会。
 
-如果将auto& [front, rest] = str改写为const auto& [front, rest] = str，那么front的类型将为const tuple_element<0,splitter>，也就是const char。
+如果将auto& [front, rest] = str改写为const auto& [front, rest] = str，那么front的类型将为const tuple_element<0,splitter>::type，也就是const char。
 
 
 更多资料请参考[structure bind uncovered](https://youtu.be/uZCvz-E1heA)，上述splitter的例子代码取自该演讲。
