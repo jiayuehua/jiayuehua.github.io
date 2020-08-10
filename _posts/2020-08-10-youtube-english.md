@@ -8,14 +8,14 @@ categories: jekyll update
 
 1 VOA Learing English
 
- ![VOA Learning English](../assets/VOAEnglish.jpg)
+ ![VOA Learning English](/assets/VOAEnglish.jpg)
 
 2 English Speeches
 
 大量时代杰出人物的演说，乔布斯、奥巴马、阿里、马丁路德金、詹妮弗洛佩兹、伊万卡等，配大字字幕。
 
-![English Speeches](../assets/EnglishSpeeches.jpg)
+![English Speeches](/assets/EnglishSpeeches.jpg)
 
 3 BBC Learning English
 
- ![BBC Learning](../assets/BBCEnglish.png)
+ ![BBC Learning](/assets/BBCEnglish.png)
