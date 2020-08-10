@@ -8,7 +8,7 @@ categories: jekyll update
 
 1 VOA Learing English
 
- ![VOA Learning English](/assets/VOAEnglish.jpg)
+ ![VOA Learning English]({{site.url}}/assets/VOAEnglish.jpg)
 
 2 English Speeches
 
