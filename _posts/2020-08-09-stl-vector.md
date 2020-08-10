@@ -5,7 +5,7 @@ date:   2020-08-09 09:23:58 +0800
 categories: jekyll update
 ---
 vector是stl中最常用最重要的容器，那么vector有那些地方还可以做的更佳呢?
-### 支持push_front,front成员函数
+### 支持push_front成员函数
 vector只能push_back而不能push_front，原因是push_front时需要将现有所有元素向后拷贝，然后将插入的值拷贝到第一个元素，很耗时。2015年google summer of code的一个项目[dvector](https://github.com/erenon/double_ended)，试图解决这一问题，dvector支持push_front，方法是元素不再存储在自由存储数组的开始，而是存储在中间:
 
 |&nbsp;|&nbsp; | 1 | 2 | 3 |&nbsp;|&nbsp;|
