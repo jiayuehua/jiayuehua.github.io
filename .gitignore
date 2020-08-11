@@ -261,3 +261,6 @@ __pycache__/
 *.pyc
 _site/
 /bookmarks_2018_4_27.html
+/aliyun
+/.jekyll-cache
+jekyll.sh
