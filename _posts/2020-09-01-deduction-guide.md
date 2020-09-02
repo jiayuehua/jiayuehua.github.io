@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "C++17 deduction guide"
-date:   2020-09-00 09:23:58 +0800
+date:   2020-09-01 09:23:58 +0800
 categories: jekyll update
 ---
 C++17引入了CTAD, class template argument deduction。比如使用标准库的std\::vector时，可以直接使用std\::vector{1,2,3}，而不必要指定模板参数std\::vector\<int>{1,2,3}。
