@@ -118,6 +118,24 @@ void TranverseBinTree(BinNode<T>* head, Act a) noexcept
     }
   }
 }
+template <class T, class Func>
+void PreTranverseBinTree(BinNode<T>* head, Func f) noexcept
+{
+  PreAction<Func> action(std::move(f));
+  TranverseBinTree(head, action);
+}
+template <class T, class Func>
+void CenterTranverseBinTree(BinNode<T>* head, Func f) noexcept
+{
+  CenterAction<Func> action(std::move(f));
+  TranverseBinTree(head, action);
+}
+template <class T, class Func>
+void PostTranverseBinTree(BinNode<T>* head, Func f) noexcept
+{
+  PostAction<Func> action(std::move(f));
+  TranverseBinTree(head, action);
+}
 
 int main()
 {
@@ -134,30 +152,27 @@ int main()
   {
     std::cout << "PreTranverse\n";
     auto l = [](int& i) {
-      std::cout << i << std::endl;
+      std::cout << i << ' ';
       ++i;
     };
-    PreAction<decltype(l)> preaction(l);
-    TranverseBinTree(a.get(), preaction);
+    PreTranverseBinTree(a.get(), std::move(l));
     std::cout << "\n"
               << "--------\n";
   }
   {
     std::cout << "\nCenterTranverse\n";
     auto l = [](int i) {
-      std::cout << i << std::endl;
+      std::cout << i << " ";
       ++i;
     };
-    CenterAction<decltype(l)> centeraction(l);
-    TranverseBinTree(a.get(), centeraction);
+    CenterTranverseBinTree(a.get(), std::move(l));
     std::cout << "\n"
               << "--------\n";
   }
   {
     std::cout << "\nPostTranverse\n";
-    auto                    l = [](const int& i) { std::cout << i << std::endl; };
-    PostAction<decltype(l)> postaction(l);
-    TranverseBinTree(a.get(), postaction);
+    auto l = [](const int& i) { std::cout << i << " "; };
+    PostTranverseBinTree(a.get(), std::move(l));
     std::cout << "\n"
               << "--------\n";
   }
