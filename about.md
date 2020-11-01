@@ -84,5 +84,5 @@ permalink: /about/
 
 贾跃华
 
-我的新浪博客 [贾跃华](http://http://blog.sina.com.cn/jiayuehua8)
+我的新浪博客 [贾跃华](http://blog.sina.com.cn/jiayuehua8)
 
