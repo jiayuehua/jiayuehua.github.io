@@ -116,6 +116,6 @@ permalink: /about/
 100位世界级C\++专家twitter列表   
 [C++ twitter  ](https://twitter.com/i/lists/97437169?s=20) 
 
-[C\++演进视频汇总 日常更新](https://www.swedencpp.se/videos)  
+[C\++演讲视频汇总 日常更新](https://www.swedencpp.se/videos)  
 [meeting C++ blogroll](https://meetingcpp.com/blog/blogroll/)   
 [cpp links](https://github.com/MattPD/cpplinks)
