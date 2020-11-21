@@ -86,3 +86,36 @@ permalink: /about/
 
 我的新浪博客 [贾跃华](http://blog.sina.com.cn/jiayuehua8)
 
+###  Cool C++ blogs
+
+
+1. [bjarne stroustrup](https://www.stroustrup.com/)   
+2. [Alexander A. Stepanov](http://stepanovpapers.com/)   
+3. [Andrei Alexandrescu](http://erdani.org/)  
+6. [  Sutter's Mill (herb Sutter) ](https://herbsutter.com/)  
+2. [  Eric Niebler  ](http://ericniebler.com/)  
+1.  [Arthur O’Dwyer](https://quuxplusone.github.io/blog/)
+7. [  vector-of-bool ](https://vector-of-bool.github.io/)  
+1. [  Barry Revzin's Blog  ](https://brevzin.github.io/)  
+4. [  Just Software Solutions  (Anthony Williams) ](https://www.justsoftwaresolutions.co.uk/blog/)  
+9. [  Why is a raven like a writing desk? (Ben Deane) ](http://www.elbeno.com/blog/)  
+2.  [the pasture](https://thephd.github.io/) 
+3.  [Fluent C++](http://www.fluentcpp.com/) 
+4.  [Bartek's coding blog](https://www.bfilipek.com/)
+5.  [Sy Brand](https://blog.tartanllama.xyz/) 
+6.  [Vittorio Romeo](https://vittorioromeo.info/) 
+1. [ foonathan::blog() (jonathan mueller)](https://foonathan.net/)   
+1. [lewis baker]( https://lewissbaker.github.io/)   
+2. [howard hinnant](https://howardhinnant.github.io/)
+
+
+全球 C\++社区交流群  
+ [Cpplang ](https://cpplang-inviter.cppalliance.org/)  
+[include C++  ](https://discord.com/invite/ZPErMGW)
+
+100位世界级C\++专家twitter列表   
+[C++ twitter  ](https://twitter.com/i/lists/97437169?s=20) 
+
+[C\++演进视频汇总 日常更新](https://www.swedencpp.se/videos)  
+[meeting C++ blogroll](https://meetingcpp.com/blog/blogroll/)   
+[cpp links](https://github.com/MattPD/cpplinks)
