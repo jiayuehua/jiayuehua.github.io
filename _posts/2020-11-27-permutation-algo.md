@@ -14,15 +14,15 @@ for_each_permutation(BidirIter first,
                      BidirIter last,
                      Function f);
 ```
-从distance(first,last)个元素中挑选distance(first,mid)个元素的排列，对每一个排列回调f函数。
+计算从distance(first,last)个元素中挑选distance(first,mid)个元素的所有排列，对每一个排列回调f函数。
 f的例子
 ```cpp
 auto f = []<typename BidirIter >(BidirIter b, BidirIter e){
-    std::for_each(b,e,[](auto e){std::cout<<e<<','};);
+    std::for_each(b,e,[](auto e){std::cout<<e<<',';});
     std::cout<<'\n';
 }
 ```
-如果回调以上f，将打印挑选出来的每个排列。
+如果回调以上f，将打印挑选出来的每个排列的各个元素。
 
 
 ```cpp
@@ -32,12 +32,13 @@ count_each_combination(UInt d1, UInt d2);
 ```
 计算从d1+d2的元素中挑选出d1个元素的所有组合的数量，如
 count_each_combination(2,1) ==3。
-
+```
 template <class BidirIter>
 std::uintmax_t
 count_each_circular_permutation(BidirIter first,
                                 BidirIter mid,
                                 BidirIter last);
+```
 
 计算从distance(first,last)个元素中挑选distance(first,mid)个元素的循环排列的数量。
 如
